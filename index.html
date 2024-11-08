@@ -9,28 +9,30 @@
 </head>
     <body>
         <header class="headerNav">
-            <div class="custom-shape-divider-bottom-1730924855">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
-                </svg>
-            </div>
-
-            <h2>Uma seleção de produtos</h2>
-            <h1>Especial para você</h1>
+            <div class="container">
+                <div class="custom-shape-divider-bottom-1730924855">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+                    </svg>
+                </div>
     
-            <span class="descriptionHeader">Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!</span>
-            
-            <nav>
-                <ul>
-                    <li><a href="">Conheça a Linx</a></li>
-                    <li><a href="">Ajude o algoritmo</a></li>
-                    <li><a href="">Seus produtos</a></li>
-                    <li><a href="">Compartilhe</a></li>
-                </ul>
-            </nav>
+                <h2>Uma seleção de produtos</h2>
+                <h1>Especial para você</h1>
+        
+                <span class="descriptionHeader">Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!</span>
+                
+                <nav>
+                    <ul>
+                        <li><a href="">Conheça a Linx</a></li>
+                        <li><a href="">Ajude o algoritmo</a></li>
+                        <li><a href="">Seus produtos</a></li>
+                        <li><a href="">Compartilhe</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
-        <section>
+        <section class="helpAlgorithm container">
             <aside>
                 <h3>Ajude o algorítimo a ser mais certeiro</h3>
                 <p>
@@ -41,25 +43,31 @@
                 </p>
             </aside>
 
-            <form id="userSign">
-                <label for="yourName">Seu nome:</label>
-                <input type="text" name="yourName">
-                <label for="yourEmail">E-Mail:</label>
-                <input type="email" name="yourEmail">
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf">
+            <form id="userSign" class="userSign">
+                <div class="inputUserSignWrapper">
+                    <label for="yourName" class="labelUserSign">Seu nome:</label>
+                    <input type="text" name="yourName" id="yourName" class="inputUserSign">
+                    <label for="yourEmail" class="labelUserSign">E-Mail:</label>
+                    <input type="email" name="yourEmail" id="yourEmail" class="inputUserSign">
+                    <label for="cpf" class="labelUserSign">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" class="inputUserSign">
+                </div>
 
-                <label for="masculino">Masculino</label>
-                <input type="checkbox" name="masculino" id="">
-                <label for="feminino">Feminino</label>
-                <input type="checkbox" name="feminino" id="">
+                <div class="checkersGenderWrapper">
+                    <input type="radio" name="genderSelect" id="masculinoChecker" class="checkersGender">
+                    <label for="masculinoChecker">Masculino</label>
+                    <input type="radio" name="genderSelect" id="femininoChecker" class="checkersGender">
+                    <label for="femininoChecker">Feminino</label>
+                </div>
 
-                <button type="button">Enviar</button>
+                <button type="button" class="submitUserSign">Enviar</button>
             </form>
         </section>
 
         <section>
-            <header><h3>Sua seleção especial</h3></header>
+            <header>
+                <h3>Sua seleção especial</h3>
+            </header>
             <article>
                 <figure>
                     <img src="" alt="">

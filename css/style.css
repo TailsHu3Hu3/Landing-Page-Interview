@@ -4,14 +4,26 @@
     box-sizing:border-box;
 }
 
+:root {
+    --primary-color: #707070;
+    --secondary-color: #FFFFFF;
+    --text-color: #888888;
+}
+
+
 body {
     font-family: 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    width: 1150px;
+    margin: 0 auto;
 }
 
 .headerNav {
     text-align: center;
     position: relative;
-    background-color: #707070;
+    background-color: var(--primary-color);
     color: white;
 }
 .custom-shape-divider-bottom-1730924855 {
@@ -32,7 +44,7 @@ body {
 }
 
 .custom-shape-divider-bottom-1730924855 .shape-fill {
-    fill: #FFFFFF;
+    fill: var(--secondary-color);
 }
 
 h1 {
@@ -72,9 +84,106 @@ li a {
     text-decoration: none;
     width: 160px;
     height: 40px;
-    background-color: white;
+    background-color: var(--secondary-color);
     border-radius: 4px;
-    color: #888888;
+    color: var(--text-color);
     position: relative;
     z-index: 1;
+}
+
+
+/*********************
+*     ALGORITMO     *
+*********************/
+
+.helpAlgorithm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+aside {
+    width: 55%;
+}
+
+.userSign {
+    width: 40%;
+}
+
+.helpAlgorithm h3 {
+    font-weight: 400;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: var(--text-color);
+}
+
+.helpAlgorithm aside p:first-of-type {
+    margin-bottom: 30px;
+} 
+.helpAlgorithm aside p:last-of-type {
+    padding-bottom: 20px;
+}
+
+.helpAlgorithm aside p {
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.userSign {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inputUserSignWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.labelUserSign:first-of-type {
+    margin-top: 0;
+}
+.labelUserSign {
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+.inputUserSign {
+    height: 40px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: var(--primary-color);
+    padding-left: 10px;
+}
+
+.checkersGenderWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.checkersGender {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.checkersGender:last-of-type {
+    margin-left: 35px;
+}
+
+.submitUserSign {
+    height: 50px;
+    font-size: 18px;
+    border-style: solid;
+    border-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
