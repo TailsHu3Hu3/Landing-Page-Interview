@@ -187,3 +187,118 @@ aside {
     background-color: var(--secondary-color);
     color: var(--text-color);
 }
+
+/*********************
+*      PRODUTOS      *
+*********************/
+
+.yourProducts {
+    margin-bottom: 200px;
+}
+
+.yourProductsHeader {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.headerDivider {
+    width: 40%;
+    height: 2px;
+    background-color: var(--text-color);
+}
+
+h3 {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.productsWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+article {
+    width: 22%;
+    color: var(--text-color);
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 180px;
+    border-style: solid;
+    border-color: var(--primary-color);
+    border-width: 2px;
+    margin-bottom: 10px;
+}
+
+figcaption {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.textBoxProducts {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.pricesBoxProducts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 80px;
+}
+
+.priceOrigin {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.presentPrice {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.portionPrice {
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.productsButtonBuy {
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.addMoreProductsWrapper {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.addMoreProductsButton {
+    height: 40px;
+    width: 100%;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 18px;
+    border-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
