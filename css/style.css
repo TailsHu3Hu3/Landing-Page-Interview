@@ -316,6 +316,7 @@ figcaption {
     display: block;
     margin-bottom: 60px;
     font-size: 17px;
+    color: var(--text-color);
 }
 
 .shareForm {
@@ -361,4 +362,79 @@ figcaption {
     border-color: var(--primary-color);
     background-color: var(--secondary-color);
     color: var(--text-color);
+}
+
+/****************
+*     FOOTER    *
+*****************/
+
+footer {
+    text-align: center;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    position: relative;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footerContentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: 190px;
+}
+
+.footerLandingPage {
+    margin-top: 10px;
+    line-height: 22px;
+    font-weight: 300;
+}
+
+.tailsFooter {
+    background-color: black;
+    padding: 30px 0;
+    margin-top: 55px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.tailsFooter a {
+    text-decoration: none;
+    color: #3c065e;
+    transition: 450ms ease-out;;
+    border-bottom: solid;
+    border-color: black;
+}
+.tailsFooter a:hover {
+    color: #7805c0;
+    font-weight: 700;
+    border-bottom: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #7805c0;
+    padding-bottom: 5px;
+}
+
+.custom-shape-divider-top-1731531492 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1731531492 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1731531492 .shape-fill {
+    fill: #FFFFFF;
 }
