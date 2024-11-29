@@ -1,5 +1,5 @@
-let productsGrid = document.querySelector(".productsWrapper")
-let addMoreProducts = document.querySelector(".addMoreProductsButton")
+const productsGrid = document.querySelector(".productsBoxesWrapper")
+const addMoreProducts = document.querySelector(".addMoreProductsButton")
 let infoProdutos1 = ''
 let nextPageAPI = 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1'
 let firstPageAPI = ''
@@ -20,13 +20,6 @@ function enviarAoConsole(dados) {
 function deuRuim() {
     console.log("breh")
 }
-
-
-
-
-
-//EU SOU MUITO GOSTOSA PORRAAAAA!!!!!
-
 
 function criacao() {
     firstPageAPI = fetch(nextPageAPI)
@@ -63,16 +56,12 @@ function fazerOsValores() {
             <button type="button" class="productsButtonBuy">Comprar</button>
         </article>
         `
-
-        // A imagem precisa ficar com 253px de height;
     }
 }
 
+addMoreProducts.addEventListener('click', criacao)
+
 console.log(productsGrid)
-
-/* https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1 */
-
-
 console.log("hii!!! >w<")
 
 

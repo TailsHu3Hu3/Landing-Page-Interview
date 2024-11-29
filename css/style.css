@@ -10,9 +10,12 @@
     --text-color: #888888;
 }
 
-
 body {
     font-family: 'Helvetica Neue', sans-serif;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .container {
@@ -220,7 +223,8 @@ h3 {
     color: var(--text-color);
 }
 
-.productsWrapper {
+.productsWrapper,
+.productsBoxesWrapper {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -239,6 +243,8 @@ article {
     border-color: var(--primary-color);
     border-width: 2px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 figcaption {
@@ -520,7 +526,8 @@ footer {
         width: 20%;
     }
 
-    .productsWrapper {
+    .productsWrapper,
+    .productsBoxesWrapper {
         flex-direction: column;
     }
 
