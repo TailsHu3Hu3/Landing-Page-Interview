@@ -1,36 +1,33 @@
 const productsGrid = document.querySelector(".productsBoxesWrapper")
 const addMoreProducts = document.querySelector(".addMoreProductsButton")
-let infoProdutos1 = ''
+let infoProducts = ''
 let nextPageAPI = 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1'
 let firstPageAPI = ''
 
-function transformarEmJson(dadosEmString) {
-    return dadosEmString.json()
+function transformJson(dataString) {
+    return dataString.json()
 }
 
-function enviarAoConsole(dados) {
-    firstPageAPI = dados
-    console.log("teste", dados)
-    console.log(firstPageAPI.products)
-    infoProdutos1 = firstPageAPI.products
+function arrangingValues(dataJson) {
+    firstPageAPI = dataJson
+    infoProducts = firstPageAPI.products
     nextPageAPI = 'https://' + firstPageAPI.nextPage
-    fazerOsValores()
+    createValues()
 }
 
-function deuRuim() {
-    console.log("breh")
+function fetchError() {
+    console.log("Something went wrong.")
 }
 
-function criacao() {
+function handlingAPI() {
     firstPageAPI = fetch(nextPageAPI)
-            .then(transformarEmJson)
-            .then(enviarAoConsole)
-            .catch(deuRuim)
+            .then(transformJson)
+            .then(arrangingValues)
+            .catch(fetchError)
 }
 
-function fazerOsValores() {
-    console.log(infoProdutos1)
-    for (let conectorProducts of infoProdutos1) {
+function createValues() {
+    for (let conectorProducts of infoProducts) {
         productsGrid.innerHTML += `
         <article>
             <figure>
@@ -59,11 +56,9 @@ function fazerOsValores() {
     }
 }
 
-addMoreProducts.addEventListener('click', criacao)
+addMoreProducts.addEventListener('click', handlingAPI)
 
-console.log(productsGrid)
-console.log("hii!!! >w<")
-
+handlingAPI()
 
 
 
