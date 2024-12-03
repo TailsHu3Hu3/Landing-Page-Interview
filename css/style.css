@@ -150,6 +150,11 @@ aside {
     justify-content: space-between;
 }
 
+.labelWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .labelUserSign:first-of-type {
     margin-top: 0;
 }
@@ -634,4 +639,20 @@ footer {
     .custom-shape-divider-top-1731531492 svg {
         height: 100px;
     }
+}
+
+/*******************
+*      ERRORS      *
+*******************/
+
+.errorInput {
+    color: lightcoral;
+}
+
+.errorBorder {
+    border-color: lightcoral;
+}
+
+.hidden {
+    display: none;
 }

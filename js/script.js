@@ -57,11 +57,39 @@ function createValues() {
 }
 
 addMoreProducts.addEventListener('click', handlingAPI)
-
 handlingAPI()
 
 
 
+/***********************************/
+
+const formYourInfo = document.forms['userSign']
+const yourName = document.forms['userSign']['yourName']
+const yourEmail = document.forms['userSign']['yourEmail']
+const yourGender = document.forms['userSign']['genderSelect']
+
+const yourNameError = document.querySelector('#yourNameError')
 
 
+yourName.addEventListener('blur', testeDoNome)
+
+function testeDoNome() {
+    if (yourName.value == '' || yourName.value.includes(' ')) {
+        yourName.classList.add('errorBorder')
+        yourNameError.classList.add('errorInput')
+        yourNameError.classList.remove('hidden')
+    } else {
+        console.log('Butou')
+        yourNameError.classList.add('hidden')
+        yourName.classList.remove('errorBorder')
+        yourNameError.classList.remove('errorInput')
+    }
+}
+
+
+console.log(formYourInfo)
+console.log(yourName)
+console.log(yourEmail)
+console.log(yourGender)
+console.log(yourNameError)
 

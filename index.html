@@ -45,18 +45,29 @@
 
             <form id="userSign" class="userSign">
                 <div class="inputUserSignWrapper">
-                    <label for="yourName" class="labelUserSign">Seu nome:</label>
+                    <div class="labelWrapper">
+                        <label for="yourName" class="labelUserSign">Seu nome:</label>
+                        <span class="errorInput" id="yourNameError">Por favor, preencha este campo.</span>
+                    </div>
                     <input type="text" name="yourName" id="yourName" class="inputUserSign">
-                    <label for="yourEmail" class="labelUserSign">E-Mail:</label>
+
+                    <div class="labelWrapper">
+                        <label for="yourEmail" class="labelUserSign">E-Mail:</label>
+                        <span class="errorInput" id="yourEmailError">Por favor, preencha este campo.</span>
+                    </div>
                     <input type="email" name="yourEmail" id="yourEmail" class="inputUserSign">
-                    <label for="cpf" class="labelUserSign">CPF:</label>
+                    
+                    <div class="labelWrapper">
+                        <label for="cpf" class="labelUserSign">CPF:</label>
+                        <span class="errorInput" id="yourCpfError">Por favor, preencha este campo.</span>
+                    </div>
                     <input type="text" id="cpf" name="cpf" class="inputUserSign">
                 </div>
 
                 <div class="checkersGenderWrapper">
-                    <input type="radio" name="genderSelect" id="masculinoChecker" class="checkersGender">
+                    <input type="radio" name="genderSelect" id="masculinoChecker" class="checkersGender" value="Masculino">
                     <label for="masculinoChecker">Masculino</label>
-                    <input type="radio" name="genderSelect" id="femininoChecker" class="checkersGender">
+                    <input type="radio" name="genderSelect" id="femininoChecker" class="checkersGender" value="Feminino">
                     <label for="femininoChecker">Feminino</label>
                 </div>
 
