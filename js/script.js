@@ -69,6 +69,7 @@ const yourEmail = document.forms['userSign']['yourEmail']
 const yourGender = document.forms['userSign']['genderSelect']
 
 const yourNameError = document.querySelector('#yourNameError')
+const yourEmailError = document.querySelector('#yourEmailError')
 
 
 yourName.addEventListener('blur', testeDoNome)
@@ -86,10 +87,30 @@ function testeDoNome() {
     }
 }
 
+yourEmail.addEventListener('blur', testeDoEmail)
+//Código adaptado por mim de outro projeto
+const emailPattern = /[äáàâãöôóòõüûúùéèêíìîa-zA-Z0-9!#\$%*/?\|\^\{\}`~&'+\-=_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+
+function testeDoEmail() {
+    let verifiedEmail = emailPattern.test(yourEmail.value)
+
+    if (verifiedEmail == true) {
+        yourEmail.classList.remove('errorBorder')
+        yourEmailError.classList.remove('errorInput')
+        yourEmailError.classList.add('hidden')
+
+    } else {
+        yourEmail.classList.add('errorBorder')
+        yourEmailError.classList.add('errorInput')
+        yourEmailError.classList.remove('hidden')
+    }
+}
 
 console.log(formYourInfo)
 console.log(yourName)
 console.log(yourEmail)
 console.log(yourGender)
 console.log(yourNameError)
+console.log(yourEmailError)
 

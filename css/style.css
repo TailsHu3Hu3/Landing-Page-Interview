@@ -647,6 +647,7 @@ footer {
 
 .errorInput {
     color: lightcoral;
+    font-size: 12px;
 }
 
 .errorBorder {
