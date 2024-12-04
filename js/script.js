@@ -70,6 +70,7 @@ const yourGender = document.forms['userSign']['genderSelect']
 
 const yourNameError = document.querySelector('#yourNameError')
 const yourEmailError = document.querySelector('#yourEmailError')
+const yourGenderError = document.querySelector('#yourGenderError')
 
 
 yourName.addEventListener('blur', testeDoNome)
@@ -106,6 +107,18 @@ function testeDoEmail() {
         yourEmailError.classList.remove('hidden')
     }
 }
+
+function testeDoGenero() {
+    if (yourGender.value == '') {
+        yourGenderError.classList.add('errorInput')
+        yourGenderError.classList.remove('hidden')
+    } else {
+        yourGenderError.classList.remove('errorInput')
+        yourGenderError.classList.add('hidden')
+    }
+}
+
+
 
 console.log(formYourInfo)
 console.log(yourName)

@@ -182,6 +182,10 @@ aside {
     color: var(--text-color);
 }
 
+.feminineLabel {
+    margin-right: 30px;
+}
+
 .checkersGender {
     width: 20px;
     height: 20px;
