@@ -63,7 +63,6 @@ handlingAPI()
 
 /***********************************/
 
-const formYourInfo = document.forms['userSign']
 const yourName = document.forms['userSign']['yourName']
 const yourEmail = document.forms['userSign']['yourEmail']
 const yourGender = document.forms['userSign']['genderSelect']
@@ -196,3 +195,40 @@ function verifyGender() {
 
 yourSubmitButton.addEventListener('click', verifyGender)
 
+/***********************************/
+
+const shareName = document.forms['share']['nameOfFriend']
+const shareEmail = document.forms['share']['emailOfFriend']
+
+const shareNameError = document.querySelector('#shareNameFriend')
+const shareEmailError = document.querySelector('#shareEmailFriend')
+
+function shareNameVerifier() {
+    if (shareName.value == '' || shareName.value.includes(' ')) {
+        shareName.classList.add('errorBorder')
+        shareNameError.classList.add('errorInput')
+        shareNameError.classList.remove('hidden')
+    } else {
+        shareName.classList.remove('errorBorder')
+        shareNameError.classList.remove('errorInput')
+        shareNameError.classList.add('hidden')
+    }
+}
+
+shareName.addEventListener('blur', shareNameVerifier)
+
+function shareEmailVerifier() {
+    let shareVerifyEmail = emailPattern.test(shareEmail.value)
+
+    if (shareVerifyEmail == true) {
+        shareEmail.classList.remove('errorBorder')
+        shareEmailError.classList.remove('errorInput')
+        shareEmailError.classList.add('hidden')
+    } else {
+        shareEmail.classList.add('errorBorder')
+        shareEmailError.classList.add('errorInput')
+        shareEmailError.classList.remove('hidden')
+    }
+}
+
+shareEmail.addEventListener('blur', shareEmailVerifier)

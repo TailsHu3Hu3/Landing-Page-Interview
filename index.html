@@ -69,7 +69,7 @@
                     <label for="masculinoChecker">Masculino</label>
                     <input type="radio" name="genderSelect" id="femininoChecker" class="checkersGender" value="Feminino">
                     <label for="femininoChecker" class="feminineLabel">Feminino</label>
-                    <span class="hidden" id="yourGenderError">Por favor, preencha este campo.</span>
+                    <span class="hidden" id="yourGenderError">Por favor, selecione uma das opções.</span>
                 </div>
 
                 <button type="button" class="submitUserSign" id="submitUserButton">Enviar</button>
@@ -105,12 +105,18 @@
 
             <form id="share" class="shareForm">
                 <div class="shareInputsWrapper">
-                    <label for="nameOfFriend" class="shareNameOfFriend">Nome do seu amigo:</label>
+                    <div class="labelWrapper">
+                        <label for="nameOfFriend" class="shareNameOfFriend">Nome do seu amigo:</label>
+                        <span class="hidden" id="shareNameFriend">Por favor, preencha este campo.</span>
+                    </div>
                     <input type="text" name="nameOfFriend" class="inputNameOfFriend">
                 </div>
 
                 <div class="shareInputsWrapper">
-                    <label for="emailOfFriend" class="shareEmailOfFriend">E-Mail:</label>
+                    <div class="labelWrapper">
+                        <label for="emailOfFriend" class="shareEmailOfFriend">E-Mail:</label>
+                        <span class="hidden" id="shareEmailFriend">Por favor, preencha este campo.</span>
+                    </div>
                     <input type="email" name="emailOfFriend" class="inputEmailOfFriend">
                 </div>
             </form>
