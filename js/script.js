@@ -72,31 +72,30 @@ const yourCPF = document.forms['userSign']['cpf']
 const yourNameError = document.querySelector('#yourNameError')
 const yourEmailError = document.querySelector('#yourEmailError')
 const yourGenderError = document.querySelector('#yourGenderError')
+const yourCpfError = document.querySelector('#yourCpfError')
 
 const yourSubmitButton = document.querySelector('#submitUserButton')
 
 
-yourName.addEventListener('blur', testeDoNome)
+yourName.addEventListener('blur', nameVerifier)
 
-function testeDoNome() {
+function nameVerifier() {
     if (yourName.value == '' || yourName.value.includes(' ')) {
         yourName.classList.add('errorBorder')
         yourNameError.classList.add('errorInput')
         yourNameError.classList.remove('hidden')
     } else {
-        console.log('Butou')
         yourNameError.classList.add('hidden')
         yourName.classList.remove('errorBorder')
         yourNameError.classList.remove('errorInput')
     }
 }
 
-yourEmail.addEventListener('blur', testeDoEmail)
-//Código adaptado por mim de outro projeto
+yourEmail.addEventListener('blur', emailVerifier)
+
 const emailPattern = /[äáàâãöôóòõüûúùéèêíìîa-zA-Z0-9!#\$%*/?\|\^\{\}`~&'+\-=_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
-
-function testeDoEmail() {
+function emailVerifier() {
     let verifiedEmail = emailPattern.test(yourEmail.value)
 
     if (verifiedEmail == true) {
@@ -111,10 +110,10 @@ function testeDoEmail() {
     }
 }
 
-yourCPF.addEventListener('input', testeDoCPF)
+yourCPF.addEventListener('input', cpfPatternVerify)
 
-function testeDoCPF(valorPassado) {
-    let cpfInputValue = valorPassado.target.value
+function cpfPatternVerify(cpfParameterInput) {
+    let cpfInputValue = cpfParameterInput.target.value
 
     let cpfPattern = cpfInputValue.replace(/\D/g, '')
                                   .replace(/(\d{3})(\d)/, '$1.$2') 
@@ -122,76 +121,70 @@ function testeDoCPF(valorPassado) {
                                   .replace(/(\d{3})(\d)/, '$1-$2') 
                                   .replace(/(-\d{2})\d+?$/, '$1');
 
-    valorPassado.target.value = cpfPattern
+    cpfParameterInput.target.value = cpfPattern
 }
 
-yourSubmitButton.addEventListener('click', function() {
-    let cpfInputado = yourCPF.value
+yourCPF.addEventListener('blur', function() {
+    let cpfInput = yourCPF.value
 
-    if (!validarCPF(cpfInputado)) {
-        console.log('AI MEU DEEEUS')
+    if (!validationCPF(cpfInput)) {
+        yourCPF.classList.add('errorBorder')
+        yourCpfError.classList.add('errorInput')
+        yourCpfError.classList.remove('hidden')
+
     } else {
-        console.log('deboa')
+        yourCPF.classList.remove('errorBorder')
+        yourCpfError.classList.remove('errorInput')
+        yourCpfError.classList.add('hidden')
     }
 })
 
-let testePraver
+function validationCPF(cpfParameter) {
+    cpfParameter = cpfParameter.replace(/\D+/g, '')
+    let summation = 0
+    let remnant;
 
-function validarCPF(validarE) {
-    console.log(validarE)
-    validarE = validarE.replace(/\D+/g, '')
-    let soma = 0
-    let resto;
-
-    if (validarE.length !== 11) {
+    if (cpfParameter.length !== 11) {
         return false
     }
 
-    console.log('passou')
-
-    if (/^(\d)\1{10}$/.test(validarE)) {
-        console.log("tem coisa igual")
+    if (/^(\d)\1{10}$/.test(cpfParameter)) {
         return false
     }
 
-    console.log('passou2')
-    // validarCPF('954.684.680-50')
-    for (let contador = 1; contador <= 9; contador++) {
-        soma += parseInt(validarE.substring(contador-1, contador)) * (11 - contador)
+    for (let count = 1; count <= 9; count++) {
+        summation += parseInt(cpfParameter.substring(count-1, count)) * (11 - count)
     }
 
-    resto = (soma * 10) % 11
-    if ((resto === 10) || (resto === 11)) {
-        resto = 0
+    remnant = (summation * 10) % 11
+    if ((remnant === 10) || (remnant === 11)) {
+        remnant = 0
     }
 
-    if (resto !== parseInt(validarE.substring(9, 10))) {
+    if (remnant !== parseInt(cpfParameter.substring(9, 10))) {
         return false
     }
-    
-    console.log('passou3')
 
-    soma = 0;
-    for (contador = 1; contador <= 10; contador++) {
-        soma += parseInt(validarE.substring(contador - 1, contador)) * (12 - contador)
+    summation = 0;
+    for (count = 1; count <= 10; count++) {
+        summation += parseInt(cpfParameter.substring(count - 1, count)) * (12 - count)
     }
-    resto = (soma * 10) % 11
+    remnant = (summation * 10) % 11
 
-    if ((resto === 10) || (resto === 11)) {
-        resto = 0
+    if ((remnant === 10) || (remnant === 11)) {
+        remnant = 0
     }
-    console.log('chegou aqui')
 
-    if (resto !== parseInt(validarE.substring(10, 11))) {
+    if (remnant !== parseInt(cpfParameter.substring(10, 11))) {
         return false
     }
-    
-    console.log('chegamo real rael')
+
     return true
 }
 
 
-function testeDoGenero() {
+
+function verifyGender() {
     if (yourGender.value == '') {
         yourGenderError.classList.add('errorInput')
         yourGenderError.classList.remove('hidden')
@@ -201,13 +194,5 @@ function testeDoGenero() {
     }
 }
 
-
-
-console.log(formYourInfo)
-console.log(yourName)
-console.log(yourEmail)
-console.log(yourGender)
-console.log(yourNameError)
-console.log(yourEmailError)
-console.log(yourCPF)
+yourSubmitButton.addEventListener('click', verifyGender)
 
