@@ -10,11 +10,11 @@
 }
 
 .introduction {
-    margin-bottom: 40px;
+    margin: 10px 0 60px 0;
 }
 
 .h3Introduction {
-    font-size: 20px;
+    font-size: 25px;
     color: var(--text-color);
     font-weight: 300;
     margin-bottom: 10px;

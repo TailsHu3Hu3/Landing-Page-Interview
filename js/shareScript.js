@@ -1,6 +1,5 @@
 const productsGrid = document.querySelector('.productsBoxesWrapper')
 const homeButton = document.querySelector('#redirectHome')
-// Copiado do script.js 
 let infoProducts = ''
 let nextPageAPI = 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1'
 let firstPageAPI = ''
@@ -12,7 +11,6 @@ function transformJson(dataString) {
 function arrangingValues(dataJson) {
     firstPageAPI = dataJson
     infoProducts = firstPageAPI.products
-    nextPageAPI = 'https://' + firstPageAPI.nextPage
     createValues()
 }
 
@@ -56,5 +54,11 @@ function createValues() {
         `
     }
 }
+
+function redirectHome() {
+   window.location.href = "../index.html"
+}
+
+homeButton.addEventListener('click', redirectHome)
 
 handlingAPI()
