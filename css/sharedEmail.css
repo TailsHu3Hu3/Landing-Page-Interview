@@ -28,3 +28,24 @@
 .yourProducts {
     margin-bottom: 80px;
 }
+
+@media (Max-width: 600px) and (Min-width: 100px) {
+    .containerHeader {
+        width: auto;
+    }
+
+    h2, h1, .descriptionHeader {
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .custom-shape-divider-bottom-1730924855 svg {
+        height: 60px;
+    }
+
+    .introduction {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
