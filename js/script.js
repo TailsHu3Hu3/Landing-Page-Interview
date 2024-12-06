@@ -193,7 +193,30 @@ function verifyGender() {
     }
 }
 
-yourSubmitButton.addEventListener('click', verifyGender)
+function testEverything() {
+    nameVerifier()
+    emailVerifier()
+    
+        function cpfVerifier() {
+            let cpfInput = yourCPF.value
+
+            if (!validationCPF(cpfInput)) {
+                yourCPF.classList.add('errorBorder')
+                yourCpfError.classList.add('errorInput')
+                yourCpfError.classList.remove('hidden')
+
+            } else {
+                yourCPF.classList.remove('errorBorder')
+                yourCpfError.classList.remove('errorInput')
+                yourCpfError.classList.add('hidden')
+            }
+        }
+
+    cpfVerifier()
+    verifyGender()
+}
+
+yourSubmitButton.addEventListener('click', testEverything)
 
 /***********************************/
 
