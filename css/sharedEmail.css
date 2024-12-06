@@ -1,9 +1,22 @@
 @import url(style.css);
 
-.container {
+.containerHeader {
     width: 600px;
+    margin: 0 auto;
 }
 
 .custom-shape-divider-bottom-1730924855 svg {
     height: 100px;
+}
+
+.h3Introduction {
+    font-size: 20px;
+    color: var(--text-color);
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.introductionDesc {
+    color: var(--text-color);
+    font-size: 18px;
 }
