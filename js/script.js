@@ -197,21 +197,27 @@ yourSubmitButton.addEventListener('click', verifyGender)
 
 /***********************************/
 
+const shareForm = document.forms['share']
 const shareName = document.forms['share']['nameOfFriend']
 const shareEmail = document.forms['share']['emailOfFriend']
 
 const shareNameError = document.querySelector('#shareNameFriend')
 const shareEmailError = document.querySelector('#shareEmailFriend')
 
+let nameFilled = false
+let emailFilled = false
+
 function shareNameVerifier() {
     if (shareName.value == '' || shareName.value.includes(' ')) {
         shareName.classList.add('errorBorder')
         shareNameError.classList.add('errorInput')
         shareNameError.classList.remove('hidden')
+        nameFilled = false
     } else {
         shareName.classList.remove('errorBorder')
         shareNameError.classList.remove('errorInput')
         shareNameError.classList.add('hidden')
+        nameFilled = true
     }
 }
 
@@ -224,11 +230,26 @@ function shareEmailVerifier() {
         shareEmail.classList.remove('errorBorder')
         shareEmailError.classList.remove('errorInput')
         shareEmailError.classList.add('hidden')
+        emailFilled = true
     } else {
         shareEmail.classList.add('errorBorder')
         shareEmailError.classList.add('errorInput')
         shareEmailError.classList.remove('hidden')
+        emailFilled = false
     }
 }
 
 shareEmail.addEventListener('blur', shareEmailVerifier)
+
+function everythingFilled(event) {
+    event.preventDefault()
+
+    if (nameFilled == true && emailFilled == true) {
+        shareForm.submit()
+    } else {
+        shareNameVerifier()
+        shareEmailVerifier()
+    }
+}
+
+shareForm.addEventListener('submit', everythingFilled)
