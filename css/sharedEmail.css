@@ -9,6 +9,10 @@
     height: 100px;
 }
 
+.introduction {
+    margin-bottom: 40px;
+}
+
 .h3Introduction {
     font-size: 20px;
     color: var(--text-color);
