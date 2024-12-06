@@ -1,5 +1,7 @@
 const productsGrid = document.querySelector('.productsBoxesWrapper')
 const homeButton = document.querySelector('#redirectHome')
+let customName = document.querySelector('#customName')
+
 let infoProducts = ''
 let nextPageAPI = 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1'
 let firstPageAPI = ''
@@ -59,6 +61,12 @@ function redirectHome() {
    window.location.href = "../index.html"
 }
 
+function nameDisplay() {
+    let sharedName = localStorage.getItem('friendName')
+    customName.innerHTML = sharedName
+}
+
 homeButton.addEventListener('click', redirectHome)
 
 handlingAPI()
+nameDisplay()

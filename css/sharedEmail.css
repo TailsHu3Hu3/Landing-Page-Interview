@@ -24,3 +24,7 @@
     color: var(--text-color);
     font-size: 18px;
 }
+
+.yourProducts {
+    margin-bottom: 80px;
+}

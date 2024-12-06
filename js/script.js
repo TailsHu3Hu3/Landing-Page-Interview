@@ -245,6 +245,7 @@ function everythingFilled(event) {
     event.preventDefault()
 
     if (nameFilled == true && emailFilled == true) {
+        localStorage.setItem('friendName', shareName.value)
         shareForm.submit()
     } else {
         shareNameVerifier()
